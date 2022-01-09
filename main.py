@@ -83,21 +83,21 @@ async def on_message(message):
         await message.add_reaction(sexy)
 
     # "lmao" counter
-    myquery1 = {"_id": '272884147218022402'}
-    if collection.count_documents(myquery1) == 0:
-        if 'lmao' in str(msg.lower()):
-            post = {"_id": '272884147218022402', "score": 1}
-            collection.insert_one(post)
-            await message.channel.send("Max\'s 𝖑𝖒𝖆𝖔 count: 1")
-    else:
-        if 'lmao' in str(msg.lower()):
-            query1 = {"_id": '272884147218022402'}
-            user = collection.find(query1)
-            for result in user:
-                lmao_count = result["score"]
-            lmao_count += 1
-            collection.update_one({"_id": '272884147218022402'}, {"$set": {"score": lmao_count}})
-            await message.channel.send('𝓛𝓶𝓪𝓸 count: ' + str(lmao_count))
+    # myquery1 = {"_id": '272884147218022402'}
+    # if collection.count_documents(myquery1) == 0:
+    #     if 'lmao' in str(msg.lower()):
+    #         post = {"_id": '272884147218022402', "score": 1}
+    #         collection.insert_one(post)
+    #         await message.channel.send("Max\'s 𝖑𝖒𝖆𝖔 count: 1")
+    # else:
+    #     if 'lmao' in str(msg.lower()):
+    #         query1 = {"_id": '272884147218022402'}
+    #         user = collection.find(query1)
+    #         for result in user:
+    #             lmao_count = result["score"]
+    #         lmao_count += 1
+    #         collection.update_one({"_id": '272884147218022402'}, {"$set": {"score": lmao_count}})
+    #         await message.channel.send('𝓛𝓶𝓪𝓸 count: ' + str(lmao_count))
     await client.process_commands(message)
 
 
