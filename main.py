@@ -10,6 +10,8 @@ import random
 from pprint import pprint
 import datetime
 import time
+import io
+import aiohttp
 
 # MongoDB password login
 cluster = MongoClient("mongodb+srv://stantheman:kittendatabase@cluster0.pt8q9.mongodb.net/test")
@@ -48,10 +50,13 @@ def get_sun():
     sunrise = json_data['city']['sunrise']
     sunset = json_data['city']['sunset']
     time1 = datetime.datetime.fromtimestamp(sunset)
+    # print(time1)
     time2 = datetime.datetime.fromtimestamp(sunrise)
     sunset_time = time1.strftime('%I:%M:%S %p')
     sunrise_time = time2.strftime('%I:%M:%S %p')
     location = json_data['city']['name']
+    # print(sunset_time)
+    # print(sunrise_time)
     return "Sunrise: " + sunrise_time + "\n" + "Sunset: " + sunset_time
 
 
@@ -81,6 +86,14 @@ async def on_message(message):
     if '𝓼𝓮𝔁𝔂' in str(msg.lower()):
         sexy = '😩'
         await message.add_reaction(sexy)
+
+    if 'god' in str(msg.lower()) or 'pog' in str(msg.lower()) or 'max' in str(msg.lower()):
+        embed = discord.Embed()
+
+        embed.set_image(
+            url='https://media-exp1.licdn.com/dms/image/C4E03AQFG-PwSDv3-5g/profile-displayphoto-shrink_400_400/0'
+                '/1604472726646?e=1647475200&v=beta&t=EfWgpdP7k75ZKcebf33fGqPkcTtTfqCDlPHhpxgkpEU')
+        await message.channel.send(embed=embed)
 
     # "lmao" counter
     # myquery1 = {"_id": '272884147218022402'}
