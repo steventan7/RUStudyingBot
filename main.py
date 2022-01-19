@@ -59,7 +59,7 @@ def get_sun():
     location = json_data['city']['name']
     # print(sunrise_time)
     # print("Sunrise: " + str(sunrise_hour) + sunrise_time + "\n" + "Sunset: " + str(sunset_hour) + sunset_time)
-    return "Sunrise: " + sunrise_time + "\n" + "Sunset: " + sunset_time
+    return "Sunrise: " + str(sunrise_hour) + sunrise_time + "\n" + "Sunset: " + str(sunset_hour) + sunset_time
 
 get_sun()
 # states that the bot is working
@@ -89,7 +89,7 @@ async def on_message(message):
         sexy = '😩'
         await message.add_reaction(sexy)
 
-    if 'god' in str(msg.lower()) or 'pog' in str(msg.lower()) or 'max' in str(msg.lower()):
+    if 'potassium' in str(msg.lower()) or 'pog' in str(msg.lower()) or 'god' in str(msg.lower()):
         embed = discord.Embed()
 
         embed.set_image(
@@ -133,7 +133,7 @@ async def fightSong(ctx):
         "March, men of Rutgers\n"
         "Down the field today,\n"
         "March to another score,\n"
-        "Foward to the fray,\n"
+        "Forward to the fray,\n"
         "Fight! men of Rutgers\n"
         "As in days gone by,\n"
         "Fight! for the Scarlet flag\n"
