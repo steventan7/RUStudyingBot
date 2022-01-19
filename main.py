@@ -52,14 +52,16 @@ def get_sun():
     time1 = datetime.datetime.fromtimestamp(sunset)
     # print(time1)
     time2 = datetime.datetime.fromtimestamp(sunrise)
-    sunset_time = time1.strftime('%I:%M:%S %p')
-    sunrise_time = time2.strftime('%I:%M:%S %p')
+    sunset_time = time1.strftime(':%M:%S %p')
+    sunrise_time = time2.strftime(':%M:%S %p')
+    sunset_hour = int(time1.strftime('%I')) - 5
+    sunrise_hour = int(time2.strftime('%I')) - 5
     location = json_data['city']['name']
-    # print(sunset_time)
     # print(sunrise_time)
+    # print("Sunrise: " + str(sunrise_hour) + sunrise_time + "\n" + "Sunset: " + str(sunset_hour) + sunset_time)
     return "Sunrise: " + sunrise_time + "\n" + "Sunset: " + sunset_time
 
-
+get_sun()
 # states that the bot is working
 @client.event
 async def on_ready():
@@ -80,7 +82,7 @@ async def on_message(message):
         await message.add_reaction(celebration)
 
     if 'hot' in str(msg.lower()) or 'sexy' in str(msg.lower()):
-        user_id = '272884147218022402'
+        user_id = '328915056425173014'
         await message.channel.send(f"<@{user_id}> is 𝓼𝓮𝔁𝔂")
 
     if '𝓼𝓮𝔁𝔂' in str(msg.lower()):
@@ -91,8 +93,9 @@ async def on_message(message):
         embed = discord.Embed()
 
         embed.set_image(
-            url='https://media-exp1.licdn.com/dms/image/C4E03AQFG-PwSDv3-5g/profile-displayphoto-shrink_400_400/0'
-                '/1604472726646?e=1647475200&v=beta&t=EfWgpdP7k75ZKcebf33fGqPkcTtTfqCDlPHhpxgkpEU')
+            url='https://scontent-lga3-1.xx.fbcdn.net/v/t31.18172-8/13701256_166523753767274_170524675764156001_o.jpg'
+                '?_nc_cat=111&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=cKG5sheeOpMAX8fCK29&_nc_ht=scontent-lga3-1.xx&oh'
+                '=00_AT9bpekDfzMeYV_qx_o_xwC0BbmCO2ffQr7lxld5L8CaUw&oe=620B66FD')
         await message.channel.send(embed=embed)
 
     # "lmao" counter
