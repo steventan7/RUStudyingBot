@@ -13,10 +13,7 @@ import time
 import io
 import aiohttp
 
-# MongoDB password login
-cluster = MongoClient("mongodb+srv://stantheman:kittendatabase@cluster0.pt8q9.mongodb.net/test")
-db = cluster["UserData"]
-collection = db["UserData"]
+
 
 load_dotenv()
 
@@ -54,14 +51,14 @@ def get_sun():
     time2 = datetime.datetime.fromtimestamp(sunrise)
     sunset_time = time1.strftime(':%M:%S %p')
     sunrise_time = time2.strftime(':%M:%S %p')
-    sunset_hour = int(time1.strftime('%I')) - 5
-    sunrise_hour = int(time2.strftime('%I')) - 5
+    sunset_hour = int(time1.strftime('%I'))
+    sunrise_hour = int(time2.strftime('%I'))
     location = json_data['city']['name']
     # print(sunrise_time)
     # print("Sunrise: " + str(sunrise_hour) + sunrise_time + "\n" + "Sunset: " + str(sunset_hour) + sunset_time)
     return "Sunrise: " + str(sunrise_hour) + sunrise_time + "\n" + "Sunset: " + str(sunset_hour) + sunset_time
 
-get_sun()
+
 # states that the bot is working
 @client.event
 async def on_ready():
@@ -81,39 +78,71 @@ async def on_message(message):
         celebration = '🎊'
         await message.add_reaction(celebration)
 
-    if 'hot' in str(msg.lower()) or 'sexy' in str(msg.lower()):
-        user_id = '328915056425173014'
-        await message.channel.send(f"<@{user_id}> is 𝓼𝓮𝔁𝔂")
-
-    if '𝓼𝓮𝔁𝔂' in str(msg.lower()):
-        sexy = '😩'
-        await message.add_reaction(sexy)
-
-    if 'potassium' in str(msg.lower()) or 'pog' in str(msg.lower()) or 'god' in str(msg.lower()):
+    if 'sexy' in str(msg.lower()) or 'hot' in str(msg.lower()):
         embed = discord.Embed()
 
         embed.set_image(
-            url='https://scontent-lga3-1.xx.fbcdn.net/v/t31.18172-8/13701256_166523753767274_170524675764156001_o.jpg'
-                '?_nc_cat=111&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=cKG5sheeOpMAX8fCK29&_nc_ht=scontent-lga3-1.xx&oh'
-                '=00_AT9bpekDfzMeYV_qx_o_xwC0BbmCO2ffQr7lxld5L8CaUw&oe=620B66FD')
+            url='https://media-exp1.licdn.com/dms/image/C4D03AQEvvZ5uTXuiVw/profile-displayphoto-shrink_400_400/0'
+                '/1643401945691?e=1650499200&v=beta&t=nMz5FEdjzOhhRY3zZWvAvymjRyh24bzoVrJJ7AUteTI')
+
+        user_id = '744224162259664926'
+        await message.channel.send(f"<@{user_id}> is 𝓈𝑒𝓍𝓎")
         await message.channel.send(embed=embed)
 
-    # "lmao" counter
-    # myquery1 = {"_id": '272884147218022402'}
-    # if collection.count_documents(myquery1) == 0:
-    #     if 'lmao' in str(msg.lower()):
-    #         post = {"_id": '272884147218022402', "score": 1}
-    #         collection.insert_one(post)
-    #         await message.channel.send("Max\'s 𝖑𝖒𝖆𝖔 count: 1")
-    # else:
-    #     if 'lmao' in str(msg.lower()):
-    #         query1 = {"_id": '272884147218022402'}
-    #         user = collection.find(query1)
-    #         for result in user:
-    #             lmao_count = result["score"]
-    #         lmao_count += 1
-    #         collection.update_one({"_id": '272884147218022402'}, {"$set": {"score": lmao_count}})
-    #         await message.channel.send('𝓛𝓶𝓪𝓸 count: ' + str(lmao_count))
+    if 'steven' in str(msg.lower()):
+        user_id = '458458523114799119'
+        await message.channel.send(f"<@{user_id}>")
+
+    if 'david' in str(msg.lower()):
+        user_id = '657311042417852418'
+        await message.channel.send(f"<@{user_id}>")
+
+    if 'k' in str(msg.lower()):
+        user_id = '328915056425173014'
+        await message.channel.send(f"<@{user_id}>")
+
+    if 'dante' in str(msg.lower()):
+        user_id = '446150453449850881'
+        await message.channel.send(f"<@{user_id}>")
+
+    if 'ash' in str(msg.lower()) or 'ashwati' in str(msg.lower()) :
+        user_id = '882675266315517982'
+        await message.channel.send(f"<@{user_id}>")
+
+    if 'julia' in str(msg.lower()):
+        user_id = '666836877365608458'
+        await message.channel.send(f"<@{user_id}>")
+
+    if 'max' in str(msg.lower()):
+        user_id = '272884147218022402'
+        embed = discord.Embed()
+
+        embed.set_image(
+            url='https://media-exp1.licdn.com/dms/image/C4E03AQFG-PwSDv3-5g/profile-displayphoto-shrink_400_400/0'
+                '/1604472726646?e=1650499200&v=beta&t=v3L8qtxGgfH6Mhdi8Zl4JENmuFEUnlb136njlrML-Iw')
+        await message.channel.send(f"<@{user_id}>")
+        await message.channel.send(embed=embed)
+
+    if 'sexy' in str(msg.lower()):
+        sexy = '😩'
+        await message.add_reaction(sexy)
+
+    if 'pog' in str(msg.lower()) or 'god' in str(msg.lower()):
+        embed = discord.Embed()
+
+        embed.set_image(
+            url='https://scontent-lga3-2.xx.fbcdn.net/v/t31.18172-8/13701256_166523753767274_170524675764156001_o.jpg'
+                '?_nc_cat=111&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=1tW1mqAVIBsAX9zgvyH&_nc_ht=scontent-lga3-2.xx&oh'
+                '=00_AT8jA7wK7sFGqKOeb36boUjXfDEs466YvI8JLs2WJsBtww&oe=6232F3FD')
+        await message.channel.send(embed=embed)
+
+    if 'centeno' in str(msg.lower()):
+        embed = discord.Embed()
+
+        embed.set_image(
+            url='https://www.sashonors.rutgers.edu/images/stories/faculty_mentors/AnaPaulaCenteno_a9412.jpg')
+        await message.channel.send(embed=embed)
+
     await client.process_commands(message)
 
 
