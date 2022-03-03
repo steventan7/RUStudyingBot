@@ -89,9 +89,28 @@ async def on_message(message):
         await message.channel.send(f"<@{user_id}> is 𝓈𝑒𝓍𝓎")
         await message.channel.send(embed=embed)
 
+    if 'cute' in str(msg.lower()):
+        embed = discord.Embed()
+
+        embed.set_image(
+            url='https://media-exp1.licdn.com/dms/image/C4E03AQFG-PwSDv3-5g/profile-displayphoto-shrink_200_200/0'
+                '/1604472726646?e=1648080000&v=beta&t=rFyWLM9pwedAHfGw5l_SJYlywOFRWh66Wr6T9huHkE4')
+
+        user_id = '272884147218022402'
+        cute = '😍'
+        await message.add_reaction(cute)
+        await message.channel.send(f"<@{user_id}> is 𝖈𝖚𝖙𝖊")
+        await message.channel.send(embed=embed)
+
     if 'steven' in str(msg.lower()):
         user_id = '458458523114799119'
+        embed = discord.Embed()
+
+        embed.set_image(
+            url='https://media-exp1.licdn.com/dms/image/C4E03AQHt6BMBqB5EAA/profile-displayphoto-shrink_200_200/0'
+                '/1635625728239?e=1649894400&v=beta&t=Az25tgmLiPiWwQVwjd-SQ_xb2MB4M6Dugg3M6J3wIkU')
         await message.channel.send(f"<@{user_id}>")
+        await message.channel.send(embed=embed)
 
     if 'david' in str(msg.lower()):
         user_id = '657311042417852418'
@@ -122,6 +141,22 @@ async def on_message(message):
                 '/1604472726646?e=1650499200&v=beta&t=v3L8qtxGgfH6Mhdi8Zl4JENmuFEUnlb136njlrML-Iw')
         await message.channel.send(f"<@{user_id}>")
         await message.channel.send(embed=embed)
+
+    if 'ian' in str(msg.lower()):
+        user_id = '422473704308473857'
+        await message.channel.send(f"<@{user_id}>")
+
+    if 'bartek' in str(msg.lower()):
+        user_id = '194857211623636992'
+        await message.channel.send(f"<@{user_id}>")
+
+    if 'ron' in str(msg.lower()):
+        user_id = '227883660919963648'
+        await message.channel.send(f"<@{user_id}>")
+
+    if 'lauren' in str(msg.lower()):
+        user_id = '463028012561072128'
+        await message.channel.send(f"<@{user_id}>")
 
     if 'sexy' in str(msg.lower()):
         sexy = '😩'
