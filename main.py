@@ -59,6 +59,9 @@ async def on_ready():
 
 # reacts whenever a user sends a message
 client.lmao = 0
+client.bruh = 0
+client.kshitij = 0
+
 @client.event
 async def on_message(message):
     msg = message.content
@@ -73,7 +76,12 @@ async def on_message(message):
 
     if 'lmao' in msg.lower():
         client.lmao += 1
-        await message.channel.send(f"Weekly 𝖑𝖒𝖆𝖔 count: {client.lmao}")
+        await message.channel.send(f"𝓦𝓮𝓮𝓴𝓵𝔂 𝖑𝖒𝖆𝖔 count: {client.lmao}")
+
+    if 'bruh' in msg.lower():
+        client.bruh += 1
+        await message.channel.send(f"𝓦𝓮𝓮𝓴𝓵𝔂 𝖇𝖗𝖚𝖍 count: {client.bruh}")
+
     if 'sexy' in str(msg.lower()) or 'hot' in str(msg.lower()):
         embed = discord.Embed()
 
@@ -114,7 +122,9 @@ async def on_message(message):
 
     if 'k' in str(msg.lower()):
         user_id = '328915056425173014'
+        client.kshitij += 1
         await message.channel.send(f"<@{user_id}>")
+        await message.channel.send(f"Times 𝓚 has been pinned this 𝓌𝑒𝑒𝓀: {client.kshitij}")
 
     if 'dante' in str(msg.lower()):
         user_id = '446150453449850881'
