@@ -1,19 +1,11 @@
 import discord
 from dotenv import load_dotenv
 from discord.ext import commands
-import pymongo
-from pymongo import MongoClient
 import requests
 import json
 import os
-import random
-from pprint import pprint
 import datetime
 import time
-import io
-import aiohttp
-
-
 
 load_dotenv()
 
@@ -66,6 +58,7 @@ async def on_ready():
 
 
 # reacts whenever a user sends a message
+client.lmao = 0
 @client.event
 async def on_message(message):
     msg = message.content
@@ -78,6 +71,9 @@ async def on_message(message):
         celebration = '🎊'
         await message.add_reaction(celebration)
 
+    if 'lmao' in msg.lower():
+        client.lmao += 1
+        await message.channel.send(f"𝖑𝖒𝖆𝖔 count: {client.lmao}")
     if 'sexy' in str(msg.lower()) or 'hot' in str(msg.lower()):
         embed = discord.Embed()
 
@@ -124,7 +120,7 @@ async def on_message(message):
         user_id = '446150453449850881'
         await message.channel.send(f"<@{user_id}>")
 
-    if 'ash' in str(msg.lower()) or 'ashwati' in str(msg.lower()) :
+    if 'ash' in str(msg.lower()) or 'ashwati' in str(msg.lower()):
         user_id = '882675266315517982'
         await message.channel.send(f"<@{user_id}>")
 
