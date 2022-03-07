@@ -73,7 +73,7 @@ async def on_message(message):
 
     if 'lmao' in msg.lower():
         client.lmao += 1
-        await message.channel.send(f"𝖑𝖒𝖆𝖔 count: {client.lmao}")
+        await message.channel.send(f"Weekly 𝖑𝖒𝖆𝖔 count: {client.lmao}")
     if 'sexy' in str(msg.lower()) or 'hot' in str(msg.lower()):
         embed = discord.Embed()
 
