@@ -118,6 +118,12 @@ async def on_message(message):
 
     if 'david' in str(msg.lower()):
         user_id = '657311042417852418'
+        embed = discord.Embed()
+
+        embed.set_image(
+            url='https://media-exp1.licdn.com/dms/image/C4E03AQHYy_UPqPtjHg/profile-displayphoto-shrink_800_800/0'
+                '/1645638877467?e=1652313600&v=beta&t=6hOnZ5hIwyJAwqYHrboOz66zbkSae2ws-EIkU47SEa8')
+        await message.channel.send(embed=embed)
         await message.channel.send(f"<@{user_id}>")
 
     if 'k' in str(msg.lower()):
@@ -183,6 +189,14 @@ async def on_message(message):
         embed.set_image(
             url='https://www.sashonors.rutgers.edu/images/stories/faculty_mentors/AnaPaulaCenteno_a9412.jpg')
         await message.channel.send(embed=embed)
+
+    if 'guna' in str(msg.lower()):
+        embed = discord.Embed()
+
+        embed.set_image(
+            url='https://www.cs.cmu.edu/~15110-s13/staff/guna.jpg')
+        await message.channel.send(embed=embed)
+
 
     await client.process_commands(message)
 
