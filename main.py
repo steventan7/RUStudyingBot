@@ -43,8 +43,8 @@ def get_sun():
     time2 = datetime.datetime.fromtimestamp(sunrise)
     sunset_time = time1.strftime(':%M:%S %p')
     sunrise_time = time2.strftime(':%M:%S %p')
-    sunset_hour = int(time1.strftime('%I'))
-    sunrise_hour = int(time2.strftime('%I'))
+    sunset_hour = int(time1.strftime('%I')) - 4
+    sunrise_hour = int(time2.strftime('%I')) - 4
     location = json_data['city']['name']
     # print(sunrise_time)
     # print("Sunrise: " + str(sunrise_hour) + sunrise_time + "\n" + "Sunset: " + str(sunset_hour) + sunset_time)
