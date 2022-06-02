@@ -48,13 +48,14 @@ def get_sun():
     location = json_data['city']['name']
     # print(sunrise_time)
     # print("Sunrise: " + str(sunrise_hour) + sunrise_time + "\n" + "Sunset: " + str(sunset_hour) + sunset_time)
-    return "Sunrise: " + str(sunrise_hour) + sunrise_time + "\n" + "Sunset: " + str(sunset_hour) + sunset_time
+    return "Sunrise: " + str(sunrise_hour) + sunrise_time + "\n" + "Sunset: " + str(sunset_hour) + sunset_time@client.event
+
+async def on_ready():
+    print('We have logged in as {0.user}'.format(client))
 
 
 # states that the bot is working
-@client.event
-async def on_ready():
-    print('We have logged in as {0.user}'.format(client))
+
 
 
 # reacts whenever a user sends a message
@@ -87,7 +88,7 @@ async def on_message(message):
 
         embed.set_image(
             url='https://media-exp1.licdn.com/dms/image/C4D03AQEvvZ5uTXuiVw/profile-displayphoto-shrink_400_400/0'
-                '/1643401945691?e=1650499200&v=beta&t=nMz5FEdjzOhhRY3zZWvAvymjRyh24bzoVrJJ7AUteTI')
+                '/1643401945691?e=1659571200&v=beta&t=34CPv6TozPNvrIHmlJpeCAOH3KB22TrKLemT2U3Dzns')
 
         user_id = '744224162259664926'
         await message.channel.send(f"<@{user_id}> is 𝓈𝑒𝓍𝓎")
@@ -97,8 +98,8 @@ async def on_message(message):
         embed = discord.Embed()
 
         embed.set_image(
-            url='https://media-exp1.licdn.com/dms/image/C4E03AQFG-PwSDv3-5g/profile-displayphoto-shrink_200_200/0'
-                '/1604472726646?e=1648080000&v=beta&t=rFyWLM9pwedAHfGw5l_SJYlywOFRWh66Wr6T9huHkE4')
+            url='https://media-exp1.licdn.com/dms/image/C4E03AQFG-PwSDv3-5g/profile-displayphoto-shrink_400_400/0'
+                '/1604472726646?e=1659571200&v=beta&t=u-K-QVURqrJ3lCKeB0WWvaL_U0l30O6arsPihlmT5is')
 
         user_id = '272884147218022402'
         cute = '😍'
@@ -106,13 +107,23 @@ async def on_message(message):
         await message.channel.send(f"<@{user_id}> is 𝖈𝖚𝖙𝖊")
         await message.channel.send(embed=embed)
 
+    if 'will' in str(msg.lower()):
+        user_id = '744224162259664926'
+        embed = discord.Embed()
+
+        embed.set_image(
+            url='https://media-exp1.licdn.com/dms/image/C4D03AQEvvZ5uTXuiVw/profile-displayphoto-shrink_400_400/0'
+                '/1643401945691?e=1659571200&v=beta&t=34CPv6TozPNvrIHmlJpeCAOH3KB22TrKLemT2U3Dzns')
+        await message.channel.send(f"<@{user_id}>")
+        await message.channel.send(embed=embed)
+
     if 'steven' in str(msg.lower()):
         user_id = '458458523114799119'
         embed = discord.Embed()
 
         embed.set_image(
-            url='https://media-exp1.licdn.com/dms/image/C4E03AQHt6BMBqB5EAA/profile-displayphoto-shrink_200_200/0'
-                '/1635625728239?e=1649894400&v=beta&t=Az25tgmLiPiWwQVwjd-SQ_xb2MB4M6Dugg3M6J3wIkU')
+            url='https://media-exp1.licdn.com/dms/image/C5603AQEnUHyXZDY5dA/profile-displayphoto-shrink_400_400/0'
+                '/1653702772711?e=1659571200&v=beta&t=gwzh2PkPao6GuaxDM5eqjHJZVTdnK5_C6Fe-IzzLnN0')
         await message.channel.send(f"<@{user_id}>")
         await message.channel.send(embed=embed)
 
@@ -121,8 +132,8 @@ async def on_message(message):
         embed = discord.Embed()
 
         embed.set_image(
-            url='https://media-exp1.licdn.com/dms/image/C4E03AQHYy_UPqPtjHg/profile-displayphoto-shrink_800_800/0'
-                '/1645638877467?e=1652313600&v=beta&t=6hOnZ5hIwyJAwqYHrboOz66zbkSae2ws-EIkU47SEa8')
+            url='https://media-exp1.licdn.com/dms/image/C4E03AQHYy_UPqPtjHg/profile-displayphoto-shrink_400_400/0'
+                '/1645638877467?e=1659571200&v=beta&t=Uu7PWqzB6NmJTVIXatOj2Ix7GomUhS0DK_JlrzMel3M')
         await message.channel.send(embed=embed)
         await message.channel.send(f"<@{user_id}>")
 
@@ -150,7 +161,7 @@ async def on_message(message):
 
         embed.set_image(
             url='https://media-exp1.licdn.com/dms/image/C4E03AQFG-PwSDv3-5g/profile-displayphoto-shrink_400_400/0'
-                '/1604472726646?e=1650499200&v=beta&t=v3L8qtxGgfH6Mhdi8Zl4JENmuFEUnlb136njlrML-Iw')
+                '/1604472726646?e=1659571200&v=beta&t=u-K-QVURqrJ3lCKeB0WWvaL_U0l30O6arsPihlmT5is')
         await message.channel.send(f"<@{user_id}>")
         await message.channel.send(embed=embed)
 
